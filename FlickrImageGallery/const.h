@@ -19,6 +19,11 @@
 #define kPublished @"published"
 #define kAuthor @"author"
 
+#define DATE_ASCENDING  @"Order by date taken ascending"
+#define DATE_DESCENDING  @"Order by date taken descending"
+#define PUBLISH_ASCENDING  @"Order by publish ascending"
+#define PUBLISH_DESCENDING  @"Order by publish descending"
+
 #define ScreenWidth [UIScreen mainScreen].bounds.size.width
 #define ScreenHeight [UIScreen mainScreen].bounds.size.height
 

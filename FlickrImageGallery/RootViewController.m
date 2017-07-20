@@ -19,20 +19,11 @@
 
 @implementation RootViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self)
-    {
-        
-       
-    }
-    return self;
-}
-
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    _actionSheetClass = [UIActionSheet class];
     self.dataTable.hidden=YES;
     
     [self getDataWithParam:@""];
@@ -41,77 +32,70 @@
 // Refresh button method
 -(IBAction)refreshBtnClicked:(id)sender
 {
-     [self getDataWithParam:imageSearchBar.text];
+    [self getDataWithParam:imageSearchBar.text];
 }
 // Sorting button method
 -(IBAction)sortBtnClicked:(id)sender
 {
+    NSString *actionSheetTitle = @"Sorting by"; //Action Sheet Title
+    NSString *cancelTitle = @"Cancel";
     
-    // created actionsheet for four buttons as they sorted by date ascending and descending
-    UIAlertController *actionSheet = [UIAlertController alertControllerWithTitle:@"Sorting by" message:nil preferredStyle:UIAlertControllerStyleActionSheet];
+    // Allocate _actionSheetClass instead of UIActionSheet.
+    UIActionSheet *actionSheet = [(UIActionSheet *)[self.actionSheetClass alloc]
+                                  initWithTitle:actionSheetTitle                                  delegate:self
+                                  cancelButtonTitle:cancelTitle
+                                  destructiveButtonTitle:nil
+                                  otherButtonTitles:DATE_ASCENDING,DATE_DESCENDING,PUBLISH_ASCENDING,nil];
+    [actionSheet addButtonWithTitle:PUBLISH_DESCENDING];
+    [actionSheet showInView:[self view]];
     
-    [actionSheet addAction:[UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
-        
-        // Cancel button tappped.
-        [self dismissViewControllerAnimated:YES completion:^{
-        }];
-    }]];
+}
+
+- (void)actionSheet:(UIActionSheet *)actionSheet didDismissWithButtonIndex:(NSInteger)buttonIndex {
+    if (buttonIndex == [actionSheet cancelButtonIndex])
+    {
+        // cancelled, nothing happen
+        return;
+    }
     
-    // search by date ascending order
-    [actionSheet addAction:[UIAlertAction actionWithTitle:@"Order by date taken ascending" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
-        
-        NSSortDescriptor *dateDescriptor = [NSSortDescriptor
-                                            sortDescriptorWithKey:kDate
-                                            ascending:YES];
-        dataArray = [dataArray
-                           sortedArrayUsingDescriptors:@[dateDescriptor]];
-       [self.dataTable reloadData];
-        
-        
-    }]];
-    
-  // search by date descending order
-    [actionSheet addAction:[UIAlertAction actionWithTitle:@"Order by date taken descending" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
-        
-        NSSortDescriptor *dateDescriptor = [NSSortDescriptor
-                                            sortDescriptorWithKey:kDate
-                                            ascending:NO];
-        dataArray = [dataArray
-                     sortedArrayUsingDescriptors:@[dateDescriptor]];
-        [self.dataTable reloadData];
+    NSSortDescriptor *dateDescriptor;
+    // obtain a human-readable option string
+    NSString *option = [actionSheet buttonTitleAtIndex:buttonIndex];
+    if ([option isEqualToString:DATE_ASCENDING])
+    {
+        //...
+        dateDescriptor = [NSSortDescriptor
+                          sortDescriptorWithKey:kDate
+                          ascending:YES];
         
         
-    }]];
-    // search by publish ascending order
-    [actionSheet addAction:[UIAlertAction actionWithTitle:@"Order by publish ascending" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+    }
+    else if ([option isEqualToString:DATE_DESCENDING])
+    {
+        //...
+        dateDescriptor = [NSSortDescriptor
+                          sortDescriptorWithKey:kDate
+                          ascending:NO];
         
-        NSSortDescriptor *dateDescriptor = [NSSortDescriptor
-                                            sortDescriptorWithKey:kPublished
-                                            ascending:YES];
-        dataArray = [dataArray
-                           sortedArrayUsingDescriptors:@[dateDescriptor]];
-        [self.dataTable reloadData];
         
-    }]];
-    
-    // search by publish descending order
-    [actionSheet addAction:[UIAlertAction actionWithTitle:@"Order by publish descending" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
-        
-        NSSortDescriptor *dateDescriptor = [NSSortDescriptor
-                                            sortDescriptorWithKey:kPublished
-                                            ascending:NO];
-        dataArray = [dataArray
-                     sortedArrayUsingDescriptors:@[dateDescriptor]];
-        [self.dataTable reloadData];
-        
-    }]];
-    
-    
-    
-    // Present action sheet.
-    [self presentViewController:actionSheet animated:YES completion:nil];
-    
-   
+    }
+    else if ([option isEqualToString:PUBLISH_ASCENDING])
+    {
+        //...
+        dateDescriptor = [NSSortDescriptor
+                          sortDescriptorWithKey:kPublished
+                          ascending:YES];
+    }
+    else if ([option isEqualToString:PUBLISH_DESCENDING])
+    {
+        //...
+        dateDescriptor = [NSSortDescriptor
+                          sortDescriptorWithKey:kPublished
+                          ascending:NO];
+    }
+    dataArray = [dataArray
+                 sortedArrayUsingDescriptors:@[dateDescriptor]];
+    [self.dataTable reloadData];
 }
 
 -(UIView*)getViewForSheetAndPopUp:(UITableViewCell*)cell {
@@ -163,12 +147,12 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-
+    
     return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-
+    
     return [dataArray count];
 }
 
@@ -178,7 +162,7 @@
     
     ImageCell *cell = [tableView1 dequeueReusableCellWithIdentifier:simpleTableIdentifier];
     NSDictionary *dict=[dataArray objectAtIndex:indexPath.row];
-   
+    
     
     cell.titleLbl.font=[UIFont fontWithName:@"SFUIDisplay-Bold" size:12*WidthTriangle];
     cell.autherNameLbl.font=[UIFont fontWithName:@"SFUIDisplay-Regular" size:11*WidthTriangle];
@@ -277,7 +261,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     //[self doSomethingWithRowAtIndexPath:indexPath];
-  
+    
 }
 // Get formatted date
 -(NSString *)getFormattedDate:(NSString *)dateStr

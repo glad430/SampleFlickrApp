@@ -18,10 +18,11 @@
     IBOutlet UIBarButtonItem *sortBtn;
     
 }
-
+@property (nonatomic, strong) Class actionSheetClass;
 @property (nonatomic, strong) IBOutlet UITableView *dataTable;
 -(IBAction)refreshBtnClicked:(id)sender;
 -(IBAction)sortBtnClicked:(id)sender;
 -(UIView*)getViewForSheetAndPopUp:(UITableViewCell*)cell;
 -(void) getDataWithParam : (NSString *)param;
 @end
+

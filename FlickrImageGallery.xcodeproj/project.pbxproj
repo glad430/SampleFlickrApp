@@ -16,6 +16,8 @@
 		28481BB01F1E015B006B6961 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28481BAE1F1E015B006B6961 /* LaunchScreen.storyboard */; };
 		28481BBB1F1E015B006B6961 /* FlickrImageGalleryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 28481BBA1F1E015B006B6961 /* FlickrImageGalleryTests.m */; };
 		9677CF191F1FF8D0002FB716 /* ViewControllerTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 9677CF181F1FF8D0002FB716 /* ViewControllerTest.m */; };
+		9677CF381F20EF1E002FB716 /* UIMockActionSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 9677CF351F20EF1E002FB716 /* UIMockActionSheet.m */; };
+		9677CF391F20EF1E002FB716 /* UIMockActionSheetVerifier.m in Sources */ = {isa = PBXBuildFile; fileRef = 9677CF371F20EF1E002FB716 /* UIMockActionSheetVerifier.m */; };
 		A9C750B71F1E27B500D6C559 /* MKAnnotationView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = A9C750681F1E27B500D6C559 /* MKAnnotationView+WebCache.m */; };
 		A9C750B81F1E27B500D6C559 /* NSData+ImageContentType.m in Sources */ = {isa = PBXBuildFile; fileRef = A9C7506A1F1E27B500D6C559 /* NSData+ImageContentType.m */; };
 		A9C750B91F1E27B500D6C559 /* SDImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = A9C7506C1F1E27B500D6C559 /* SDImageCache.m */; };
@@ -100,6 +102,10 @@
 		28481BBA1F1E015B006B6961 /* FlickrImageGalleryTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FlickrImageGalleryTests.m; sourceTree = "<group>"; };
 		28481BBC1F1E015B006B6961 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9677CF181F1FF8D0002FB716 /* ViewControllerTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewControllerTest.m; sourceTree = "<group>"; };
+		9677CF341F20EF1E002FB716 /* UIMockActionSheet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIMockActionSheet.h; sourceTree = "<group>"; };
+		9677CF351F20EF1E002FB716 /* UIMockActionSheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIMockActionSheet.m; sourceTree = "<group>"; };
+		9677CF361F20EF1E002FB716 /* UIMockActionSheetVerifier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIMockActionSheetVerifier.h; sourceTree = "<group>"; };
+		9677CF371F20EF1E002FB716 /* UIMockActionSheetVerifier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIMockActionSheetVerifier.m; sourceTree = "<group>"; };
 		A9C750671F1E27B500D6C559 /* MKAnnotationView+WebCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MKAnnotationView+WebCache.h"; sourceTree = "<group>"; };
 		A9C750681F1E27B500D6C559 /* MKAnnotationView+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MKAnnotationView+WebCache.m"; sourceTree = "<group>"; };
 		A9C750691F1E27B500D6C559 /* NSData+ImageContentType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+ImageContentType.h"; sourceTree = "<group>"; };
@@ -217,7 +223,6 @@
 		283C5C871F1E0B42005E45D8 /* API */ = {
 			isa = PBXGroup;
 			children = (
-				A9C751151F1E31AB00D6C559 /* const.h */,
 				A9C750E21F1E2F8C00D6C559 /* WCClasses.h */,
 				A9C750E11F1E2F8C00D6C559 /* WCClasses.m */,
 			);
@@ -262,6 +267,7 @@
 		28481B9F1F1E015B006B6961 /* FlickrImageGallery */ = {
 			isa = PBXGroup;
 			children = (
+				9677CF3A1F20EF4B002FB716 /* Constant */,
 				A9C750651F1E278D00D6C559 /* HelperClasses */,
 				283C5C871F1E0B42005E45D8 /* API */,
 				28481BA31F1E015B006B6961 /* AppDelegate.h */,
@@ -297,11 +303,31 @@
 		28481BB91F1E015B006B6961 /* FlickrImageGalleryTests */ = {
 			isa = PBXGroup;
 			children = (
+				9677CF331F20EF0B002FB716 /* TestSupport */,
 				28481BBA1F1E015B006B6961 /* FlickrImageGalleryTests.m */,
 				9677CF181F1FF8D0002FB716 /* ViewControllerTest.m */,
 				28481BBC1F1E015B006B6961 /* Info.plist */,
 			);
 			path = FlickrImageGalleryTests;
+			sourceTree = "<group>";
+		};
+		9677CF331F20EF0B002FB716 /* TestSupport */ = {
+			isa = PBXGroup;
+			children = (
+				9677CF341F20EF1E002FB716 /* UIMockActionSheet.h */,
+				9677CF351F20EF1E002FB716 /* UIMockActionSheet.m */,
+				9677CF361F20EF1E002FB716 /* UIMockActionSheetVerifier.h */,
+				9677CF371F20EF1E002FB716 /* UIMockActionSheetVerifier.m */,
+			);
+			name = TestSupport;
+			sourceTree = "<group>";
+		};
+		9677CF3A1F20EF4B002FB716 /* Constant */ = {
+			isa = PBXGroup;
+			children = (
+				A9C751151F1E31AB00D6C559 /* const.h */,
+			);
+			name = Constant;
 			sourceTree = "<group>";
 		};
 		A9C750651F1E278D00D6C559 /* HelperClasses */ = {
@@ -577,7 +603,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				9677CF191F1FF8D0002FB716 /* ViewControllerTest.m in Sources */,
+				9677CF391F20EF1E002FB716 /* UIMockActionSheetVerifier.m in Sources */,
 				28481BBB1F1E015B006B6961 /* FlickrImageGalleryTests.m in Sources */,
+				9677CF381F20EF1E002FB716 /* UIMockActionSheet.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

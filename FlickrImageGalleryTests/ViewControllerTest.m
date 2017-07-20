@@ -8,6 +8,8 @@
 
 #import "RootViewController.h"
 #import <XCTest/XCTest.h>
+#import "UIMockActionSheet.h"
+#import "UIMockActionSheetVerifier.h"
 
 
 @interface ViewControllerTest : XCTestCase
@@ -27,7 +29,7 @@
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     self.testController = [storyboard instantiateViewControllerWithIdentifier:@"testTableView"];
     [self.testController performSelectorOnMainThread:@selector(loadView) withObject:nil waitUntilDone:YES];
-
+    
 }
 
 - (void)tearDown {
@@ -105,5 +107,31 @@
     NSString *expectedReuseIdentifier = [NSString stringWithFormat:@"%ld/%ld",(long)indexPath.section,(long)indexPath.row];
     XCTAssertTrue([cell.reuseIdentifier isEqualToString:expectedReuseIdentifier], @"Table does not create reusable cells");
 }
+
+- (void)testDefaultActionSheetClass
+{
+    XCTAssertEqualObjects(_testController.actionSheetClass, [UIActionSheet class]);
+}
+
+- (void)testShowActionSheet
+{
+    _testController.actionSheetClass = [UIMockActionSheet class];
+    UIMockActionSheetVerifier *sheetVerifier = [[UIMockActionSheetVerifier alloc] init];
+    
+    [_testController sortBtnClicked:nil];
+    
+    XCTAssertEqual(sheetVerifier.showCount, 1);
+    XCTAssertEqual(sheetVerifier.parentView, [_testController view]);
+    XCTAssertEqualObjects(sheetVerifier.title, @"Sorting by");
+    XCTAssertEqual(sheetVerifier.delegate, _testController);
+    XCTAssertEqualObjects(sheetVerifier.cancelButtonTitle, @"Cancel");
+    NSArray *otherButtonTitles = sheetVerifier.otherButtonTitles;
+    XCTAssertEqual([otherButtonTitles count], 4);
+    XCTAssertEqualObjects(otherButtonTitles[0], @"Order by date taken ascending");
+    XCTAssertEqualObjects(otherButtonTitles[1], @"Order by date taken descending");
+    XCTAssertEqualObjects(otherButtonTitles[2], @"Order by publish ascending");
+    XCTAssertEqualObjects(otherButtonTitles[3], @"Order by publish descending");
+}
+
 
 @end
