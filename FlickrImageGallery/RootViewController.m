@@ -59,41 +59,40 @@
         return;
     }
     
-    NSSortDescriptor *dateDescriptor;
+    
     // obtain a human-readable option string
     NSString *option = [actionSheet buttonTitleAtIndex:buttonIndex];
     if ([option isEqualToString:DATE_ASCENDING])
     {
         //...
-        dateDescriptor = [NSSortDescriptor
-                          sortDescriptorWithKey:kDate
-                          ascending:YES];
-        
+        [self updateSortedDataInTheTable:kDate sortingOrder:YES];
         
     }
     else if ([option isEqualToString:DATE_DESCENDING])
     {
         //...
-        dateDescriptor = [NSSortDescriptor
-                          sortDescriptorWithKey:kDate
-                          ascending:NO];
-        
+         [self updateSortedDataInTheTable:kDate sortingOrder:NO];
         
     }
     else if ([option isEqualToString:PUBLISH_ASCENDING])
     {
         //...
-        dateDescriptor = [NSSortDescriptor
-                          sortDescriptorWithKey:kPublished
-                          ascending:YES];
+         [self updateSortedDataInTheTable:kPublished sortingOrder:YES];
     }
     else if ([option isEqualToString:PUBLISH_DESCENDING])
     {
         //...
-        dateDescriptor = [NSSortDescriptor
-                          sortDescriptorWithKey:kPublished
-                          ascending:NO];
+        [self updateSortedDataInTheTable:kPublished sortingOrder:NO];
+        
     }
+   
+}
+
+-(void)updateSortedDataInTheTable:(NSString *)type sortingOrder:(BOOL)ascendingOrder {
+   
+    NSSortDescriptor *dateDescriptor = [NSSortDescriptor
+                      sortDescriptorWithKey:type
+                      ascending:ascendingOrder];
     dataArray = [dataArray
                  sortedArrayUsingDescriptors:@[dateDescriptor]];
     [self.dataTable reloadData];
