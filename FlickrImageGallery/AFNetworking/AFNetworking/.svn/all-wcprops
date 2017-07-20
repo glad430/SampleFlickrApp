@@ -1,0 +1,119 @@
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/njoyful_ios/!svn/ver/6/trunk/nJoyFul/nJoyFul/ThirdPartySDKs/AFNetworking/AFNetworking
+END
+AFHTTPSessionManager.m
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/njoyful_ios/!svn/ver/4/trunk/nJoyFul/nJoyFul/ThirdPartySDKs/AFNetworking/AFNetworking/AFHTTPSessionManager.m
+END
+AFURLResponseSerialization.m
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/njoyful_ios/!svn/ver/6/trunk/nJoyFul/nJoyFul/ThirdPartySDKs/AFNetworking/AFNetworking/AFURLResponseSerialization.m
+END
+AFSecurityPolicy.h
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/njoyful_ios/!svn/ver/4/trunk/nJoyFul/nJoyFul/ThirdPartySDKs/AFNetworking/AFNetworking/AFSecurityPolicy.h
+END
+AFNetworking.h
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/njoyful_ios/!svn/ver/4/trunk/nJoyFul/nJoyFul/ThirdPartySDKs/AFNetworking/AFNetworking/AFNetworking.h
+END
+AFSecurityPolicy.m
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/njoyful_ios/!svn/ver/4/trunk/nJoyFul/nJoyFul/ThirdPartySDKs/AFNetworking/AFNetworking/AFSecurityPolicy.m
+END
+AFURLSessionManager.h
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/njoyful_ios/!svn/ver/4/trunk/nJoyFul/nJoyFul/ThirdPartySDKs/AFNetworking/AFNetworking/AFURLSessionManager.h
+END
+AFURLConnectionOperation.h
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/njoyful_ios/!svn/ver/4/trunk/nJoyFul/nJoyFul/ThirdPartySDKs/AFNetworking/AFNetworking/AFURLConnectionOperation.h
+END
+AFHTTPRequestOperationManager.h
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/njoyful_ios/!svn/ver/4/trunk/nJoyFul/nJoyFul/ThirdPartySDKs/AFNetworking/AFNetworking/AFHTTPRequestOperationManager.h
+END
+AFNetworkReachabilityManager.h
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/njoyful_ios/!svn/ver/4/trunk/nJoyFul/nJoyFul/ThirdPartySDKs/AFNetworking/AFNetworking/AFNetworkReachabilityManager.h
+END
+AFURLSessionManager.m
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/njoyful_ios/!svn/ver/4/trunk/nJoyFul/nJoyFul/ThirdPartySDKs/AFNetworking/AFNetworking/AFURLSessionManager.m
+END
+AFURLConnectionOperation.m
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/njoyful_ios/!svn/ver/4/trunk/nJoyFul/nJoyFul/ThirdPartySDKs/AFNetworking/AFNetworking/AFURLConnectionOperation.m
+END
+AFURLRequestSerialization.h
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/njoyful_ios/!svn/ver/4/trunk/nJoyFul/nJoyFul/ThirdPartySDKs/AFNetworking/AFNetworking/AFURLRequestSerialization.h
+END
+AFHTTPRequestOperationManager.m
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/njoyful_ios/!svn/ver/4/trunk/nJoyFul/nJoyFul/ThirdPartySDKs/AFNetworking/AFNetworking/AFHTTPRequestOperationManager.m
+END
+AFHTTPRequestOperation.h
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/njoyful_ios/!svn/ver/4/trunk/nJoyFul/nJoyFul/ThirdPartySDKs/AFNetworking/AFNetworking/AFHTTPRequestOperation.h
+END
+AFNetworkReachabilityManager.m
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/njoyful_ios/!svn/ver/4/trunk/nJoyFul/nJoyFul/ThirdPartySDKs/AFNetworking/AFNetworking/AFNetworkReachabilityManager.m
+END
+AFURLRequestSerialization.m
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/njoyful_ios/!svn/ver/4/trunk/nJoyFul/nJoyFul/ThirdPartySDKs/AFNetworking/AFNetworking/AFURLRequestSerialization.m
+END
+AFHTTPSessionManager.h
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/njoyful_ios/!svn/ver/4/trunk/nJoyFul/nJoyFul/ThirdPartySDKs/AFNetworking/AFNetworking/AFHTTPSessionManager.h
+END
+AFHTTPRequestOperation.m
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/njoyful_ios/!svn/ver/4/trunk/nJoyFul/nJoyFul/ThirdPartySDKs/AFNetworking/AFNetworking/AFHTTPRequestOperation.m
+END
+AFURLResponseSerialization.h
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/njoyful_ios/!svn/ver/4/trunk/nJoyFul/nJoyFul/ThirdPartySDKs/AFNetworking/AFNetworking/AFURLResponseSerialization.h
+END

@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FlickrImageGalleryTests/FlickrImageGalleryTests.m"
+            timestampString = "522153591.261844"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "40"
+            endingLineNumber = "40"
+            landmarkName = "-testFeedLoading"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[FlickrImageGalleryTests testFeedLoading]"
+                  moduleName = "FlickrImageGalleryTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Volumes/Projects/samir/Client/FlickrImageGallery/FlickrImageGalleryTests/FlickrImageGalleryTests.m"
+                  timestampString = "522153592.903698"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "40"
+                  endingLineNumber = "40"
+                  offsetFromSymbolStart = "97">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__42-[FlickrImageGalleryTests testFeedLoading]_block_invoke"
+                  moduleName = "FlickrImageGalleryTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Volumes/Projects/samir/Client/FlickrImageGallery/FlickrImageGalleryTests/FlickrImageGalleryTests.m"
+                  timestampString = "522153592.907014"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "41"
+                  endingLineNumber = "41"
+                  offsetFromSymbolStart = "48">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FlickrImageGalleryTests/FlickrImageGalleryTests.m"
+            timestampString = "522153591.261844"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "44"
+            endingLineNumber = "44"
+            landmarkName = "-testFeedLoading"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FlickrImageGalleryTests/FlickrImageGalleryTests.m"
+            timestampString = "522153591.261844"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "41"
+            endingLineNumber = "41"
+            landmarkName = "-testFeedLoading"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__42-[FlickrImageGalleryTests testFeedLoading]_block_invoke"
+                  moduleName = "FlickrImageGalleryTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Volumes/Projects/samir/Client/FlickrImageGallery/FlickrImageGalleryTests/FlickrImageGalleryTests.m"
+                  timestampString = "522153592.915135"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "41"
+                  endingLineNumber = "41"
+                  offsetFromSymbolStart = "48">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__42-[FlickrImageGalleryTests testFeedLoading]_block_invoke"
+                  moduleName = "FlickrImageGalleryTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Volumes/Projects/samir/Client/FlickrImageGallery/FlickrImageGalleryTests/FlickrImageGalleryTests.m"
+                  timestampString = "522153592.9179"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "41"
+                  endingLineNumber = "41"
+                  offsetFromSymbolStart = "443">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__42-[FlickrImageGalleryTests testFeedLoading]_block_invoke"
+                  moduleName = "FlickrImageGalleryTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Volumes/Projects/samir/Client/FlickrImageGallery/FlickrImageGalleryTests/FlickrImageGalleryTests.m"
+                  timestampString = "522153592.920928"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "41"
+                  endingLineNumber = "41"
+                  offsetFromSymbolStart = "536">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__42-[FlickrImageGalleryTests testFeedLoading]_block_invoke"
+                  moduleName = "FlickrImageGalleryTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Volumes/Projects/samir/Client/FlickrImageGallery/FlickrImageGalleryTests/FlickrImageGalleryTests.m"
+                  timestampString = "522153592.923631"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "41"
+                  endingLineNumber = "41"
+                  offsetFromSymbolStart = "658">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
