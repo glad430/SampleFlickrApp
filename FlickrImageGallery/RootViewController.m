@@ -57,6 +57,7 @@
         }];
     }]];
     
+    // search by date ascending order
     [actionSheet addAction:[UIAlertAction actionWithTitle:@"Order by date taken ascending" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
         
         NSSortDescriptor *dateDescriptor = [NSSortDescriptor
@@ -69,7 +70,7 @@
         
     }]];
     
-
+  // search by date descending order
     [actionSheet addAction:[UIAlertAction actionWithTitle:@"Order by date taken descending" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
         
         NSSortDescriptor *dateDescriptor = [NSSortDescriptor
@@ -81,7 +82,7 @@
         
         
     }]];
-    
+    // search by publish ascending order
     [actionSheet addAction:[UIAlertAction actionWithTitle:@"Order by publish ascending" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
         
         NSSortDescriptor *dateDescriptor = [NSSortDescriptor
@@ -93,6 +94,7 @@
         
     }]];
     
+    // search by publish descending order
     [actionSheet addAction:[UIAlertAction actionWithTitle:@"Order by publish descending" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
         
         NSSortDescriptor *dateDescriptor = [NSSortDescriptor
