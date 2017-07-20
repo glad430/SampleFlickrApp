@@ -42,6 +42,7 @@ NSString *const UIMockActionSheetShowNotification = @"UIMockActionSheetShowNotif
 - (void)showInView:(UIView *)view
 {
     self.parentView = view;
+    // Test buttons on the view
     [[NSNotificationCenter defaultCenter] postNotificationName:UIMockActionSheetShowNotification
                                                         object:self
                                                       userInfo:nil];

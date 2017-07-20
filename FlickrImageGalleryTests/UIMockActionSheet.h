@@ -13,7 +13,7 @@ extern NSString *const UIMockActionSheetShowNotification;
 
 /**
     Inject this class in place of the UIActionSheet class.
-    Instantiate a JMRMockActionSheetVerifier before the execution phase of your test.
+    Instantiate a UIMockActionSheetVerifier before the execution phase of your test.
  */
 @interface UIMockActionSheet : UIView
 

@@ -51,6 +51,7 @@
     
 }
 
+// Actions for the actionsheet which popup after pressing sortButton
 - (void)actionSheet:(UIActionSheet *)actionSheet didDismissWithButtonIndex:(NSInteger)buttonIndex {
     if (buttonIndex == [actionSheet cancelButtonIndex])
     {
