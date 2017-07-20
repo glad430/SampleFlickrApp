@@ -59,43 +59,49 @@
         return;
     }
     
-    
+    NSString *sortType = nil;
+    BOOL ascendingOrder;
     // obtain a human-readable option string
     NSString *option = [actionSheet buttonTitleAtIndex:buttonIndex];
     if ([option isEqualToString:DATE_ASCENDING])
     {
         //...
-        [self updateSortedDataInTheTable:kDate sortingOrder:YES];
+        sortType = kDate;
+        ascendingOrder = YES;
         
     }
     else if ([option isEqualToString:DATE_DESCENDING])
     {
         //...
-         [self updateSortedDataInTheTable:kDate sortingOrder:NO];
+        sortType = kDate;
+        ascendingOrder = NO;
         
     }
     else if ([option isEqualToString:PUBLISH_ASCENDING])
     {
         //...
-         [self updateSortedDataInTheTable:kPublished sortingOrder:YES];
+        sortType = kPublished;
+        ascendingOrder = YES;
     }
     else if ([option isEqualToString:PUBLISH_DESCENDING])
     {
         //...
-        [self updateSortedDataInTheTable:kPublished sortingOrder:NO];
-        
+        sortType = kPublished;
+        ascendingOrder = NO;
+       
     }
    
+     [self updateSortedDataInTheTable:sortType sortingOrder:ascendingOrder];
 }
 
--(void)updateSortedDataInTheTable:(NSString *)type sortingOrder:(BOOL)ascendingOrder {
+-(void)updateSortedDataInTheTable:(NSString *)sortType sortingOrder:(BOOL)ascendingOrder {
    
     /* Sorting method added to do sorting as per date added 
      and publish in ascending and descending order
      */
     
     NSSortDescriptor *dateDescriptor = [NSSortDescriptor
-                      sortDescriptorWithKey:type
+                      sortDescriptorWithKey:sortType
                       ascending:ascendingOrder];
     dataArray = [dataArray
                  sortedArrayUsingDescriptors:@[dateDescriptor]];
@@ -224,6 +230,7 @@
         [self dismissViewControllerAnimated:YES completion:^{
         }];
     }]];
+    
     // sharing image by mail
     [actionSheet addAction:[UIAlertAction actionWithTitle:@"Share in mail" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
         
@@ -242,12 +249,14 @@
         
         
     }]];
+    
     // open image in browser
     [actionSheet addAction:[UIAlertAction actionWithTitle:@"Open in browser" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
         
         [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[dict valueForKey:kLink]]];
         
     }]];
+    
     // save image to gallery
     [actionSheet addAction:[UIAlertAction actionWithTitle:@"Save to gallery" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
         
@@ -272,6 +281,7 @@
     //[self doSomethingWithRowAtIndexPath:indexPath];
     
 }
+
 // Get formatted date
 -(NSString *)getFormattedDate:(NSString *)dateStr
 {
