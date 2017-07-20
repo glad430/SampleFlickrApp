@@ -4,7 +4,6 @@
 //
 
 #import "UIMockActionSheetVerifier.h"
-
 #import "UIMockActionSheet.h"
 
 

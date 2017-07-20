@@ -90,6 +90,10 @@
 
 -(void)updateSortedDataInTheTable:(NSString *)type sortingOrder:(BOOL)ascendingOrder {
    
+    /* Sorting method added to do sorting as per date added 
+     and publish in ascending and descending order
+     */
+    
     NSSortDescriptor *dateDescriptor = [NSSortDescriptor
                       sortDescriptorWithKey:type
                       ascending:ascendingOrder];
@@ -190,6 +194,7 @@
     float height = [self getHeightForText:[dict objectForKey:kTitle]];
     return (145*WidthTriangle)+height+65*WidthTriangle;
 }
+
 // Get height for Title
 - (float)getHeightForText:(NSString *)text
 {
@@ -204,6 +209,8 @@
     CGRect requiredHeight = [string boundingRectWithSize:constrainedSize options:NSStringDrawingUsesLineFragmentOrigin context:nil];
     return requiredHeight.size.height;
 }
+
+// More button actions clicked from the UItableView Cell and call this method in action sheet
 -(void)moreBtnClicked:(UIButton *) btn
 {
     NSDictionary *dict=[dataArray objectAtIndex:btn.tag];
@@ -258,6 +265,8 @@
     // Present action sheet.
     [self presentViewController:actionSheet animated:YES completion:nil];
 }
+
+
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     //[self doSomethingWithRowAtIndexPath:indexPath];
