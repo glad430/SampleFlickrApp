@@ -1,35 +1,35 @@
 //
-//  ViewControllerTest.m
+//  RootViewTest.m
 //  FlickrImageGallery
 //
-//  Created by Abdul  on 19/07/2017.
-//  Copyright @ Abdul Mohammed. All rights reserved.
+//  Created by Abdul  on 21/07/2017.
+//  Copyright © 2017 Creative Infoway. All rights reserved.
 //
 
-#import "RootViewController.h"
 #import <XCTest/XCTest.h>
+#import "RootViewController.h"
 #import "UIMockActionSheet.h"
 #import "UIMockActionSheetVerifier.h"
 
-
-@interface ViewControllerTest : XCTestCase
+@interface RootViewTest : XCTestCase
 @property (nonatomic, strong) RootViewController *testController;
 @end
 
-@implementation ViewControllerTest
-{
-    
-}
+@implementation RootViewTest
 
 - (void)setUp {
     [super setUp];
+    
     // Put setup code here. This method is called before the invocation of each test method in the class.
     
-    
+    // In UI tests it is usually best to stop immediately when a failure occurs.
+    self.continueAfterFailure = NO;
+    // UI tests must launch the application that they test. Doing this in setup will make sure it happens for each test method.
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    self.testController = [storyboard instantiateViewControllerWithIdentifier:@"testTableView"];
-    [self.testController performSelectorOnMainThread:@selector(loadView) withObject:nil waitUntilDone:YES];
-    
+        self.testController = [storyboard instantiateViewControllerWithIdentifier:@"testTableView"];
+        [self.testController performSelectorOnMainThread:@selector(loadView) withObject:nil waitUntilDone:YES];
+
+    // In UI tests it’s important to set the initial state - such as interface orientation - required for your tests before they run. The setUp method is a good place to do this.
 }
 
 - (void)tearDown {
@@ -38,15 +38,8 @@
 }
 
 - (void)testExample {
-    // This is an example of a functional test case.
+    // Use recording to get started writing UI tests.
     // Use XCTAssert and related functions to verify your tests produce the correct results.
-}
-
-- (void)testPerformanceExample {
-    // This is an example of a performance test case.
-    [self measureBlock:^{
-        // Put the code you want to measure the time of here.
-    }];
 }
 
 #pragma mark - View loading tests
@@ -87,39 +80,14 @@
     XCTAssertNotNil(_testController.dataTable.delegate, @"Table delegate cannot be nil");
 }
 
-- (void)testTableViewNumberOfRowsInSection
-{
-    NSInteger expectedRows = 10;
-    XCTAssertTrue([_testController tableView:_testController.dataTable numberOfRowsInSection:0]==expectedRows, @"Table has %ld rows but it should have %ld", (long)[_testController tableView:_testController.dataTable numberOfRowsInSection:0], (long)expectedRows);
-}
-
-- (void)testTableViewHeightForRowAtIndexPath
-{
-    CGFloat expectedHeight = 44.0;
-    CGFloat actualHeight = _testController.dataTable.rowHeight;
-    XCTAssertEqual(expectedHeight, actualHeight, @"Cell should have %f height, but they have %f", expectedHeight, actualHeight);
-}
-
-- (void)testTableViewCellCreateCellsWithReuseIdentifier
-{
-    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
-    UITableViewCell *cell = [_testController tableView:_testController.dataTable cellForRowAtIndexPath:indexPath];
-    NSString *expectedReuseIdentifier = [NSString stringWithFormat:@"%ld/%ld",(long)indexPath.section,(long)indexPath.row];
-    XCTAssertTrue([cell.reuseIdentifier isEqualToString:expectedReuseIdentifier], @"Table does not create reusable cells");
-}
-
-- (void)testDefaultActionSheetClass
-{
-    XCTAssertEqualObjects(_testController.actionSheetClass, [UIActionSheet class]);
-}
 
 - (void)testShowActionSheet
 {
     _testController.actionSheetClass = [UIMockActionSheet class];
     UIMockActionSheetVerifier *sheetVerifier = [[UIMockActionSheetVerifier alloc] init];
-    
+
     [_testController sortBtnClicked:nil];
-    
+
     XCTAssertEqual(sheetVerifier.showCount, 1);
     XCTAssertEqual(sheetVerifier.parentView, [_testController view]);
     XCTAssertEqualObjects(sheetVerifier.title, @"Sorting by");

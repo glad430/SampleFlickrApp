@@ -23,7 +23,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    // By default, we want to use the real UIActionSheet classes.
+    // Don't just copy this; TDD your way here by writing a failing test.
     _actionSheetClass = [UIActionSheet class];
+    
     self.dataTable.hidden=YES;
     
     [self getDataWithParam:@""];
@@ -96,7 +99,7 @@
 
 -(void)updateSortedDataInTheTable:(NSString *)sortType sortingOrder:(BOOL)ascendingOrder {
    
-    /* Sorting method added to do sorting as per date added 
+    /* Sorting method added to do sorting, as per date added
      and publish in ascending and descending order
      */
     
@@ -141,14 +144,21 @@
     [WCClasses loadFeedByTag:param complete:^(NSArray *data){
         self.dataTable.hidden=NO;
         dataArray = [NSArray arrayWithArray:data];
-        [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
-        [self.dataTable reloadData];
         
+        [self updateTableView];
         
     }fail:^(NSError *error){
         [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
     }];
 }
+
+-(void)updateTableView
+{
+    [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+    [self.dataTable reloadData];
+    
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

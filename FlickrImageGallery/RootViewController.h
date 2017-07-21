@@ -24,5 +24,6 @@
 -(IBAction)sortBtnClicked:(id)sender;
 -(UIView*)getViewForSheetAndPopUp:(UITableViewCell*)cell;
 -(void) getDataWithParam : (NSString *)param;
+-(void)updateTableView;
 @end
 
