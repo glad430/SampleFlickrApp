@@ -35,11 +35,12 @@
 - (void)testFeedLoading  {
     //XCTAssertNotNil(nil, "data should not be nil");
    // XCTAssertGreaterThan(-1, 0,"data should be greather than 0");
-    
+    NSInteger totalCountData = 20;
     XCTestExpectation *expectation = [self expectationWithDescription:@"asynchronous request"];
     [WCClasses loadFeedByTag:@"" complete:^(NSArray *data){
         XCTAssertNotNil(data, "data should not be nil");
         [expectation fulfill];
+        XCTAssertEqual(data.count, totalCountData);
     }fail:^(NSError *error){
         XCTFail(@"Somthing wrong");
         [expectation fulfill];
